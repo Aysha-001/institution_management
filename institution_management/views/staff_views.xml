@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="staff_form" model="ir.ui.view">
+        <field name="name">staff form</field>
+        <field name="model">institution.staff</field>
+        <field name="arch" type="xml">
+            <form string="Staff Form">
+            <sheet>
+                <group>
+                    <group string="Personal Information">
+                        <field name="first_name"/>
+                        <field name="last_name"/>
+                        <field name="gender"/>
+                        <field name="age"/>
+                        <field name="dob"/>
+                        <field name="work_email"/>
+                        <field name="work_contact"/>
+                        <field name="marital_status"/>
+
+                    </group>
+                    <group string="Work Information">
+
+                        <field name="job_title"/>
+                        <field name="date_joined"/>
+                        <field name="salary"/>
+                        <field name="department_id"/>
+                        <field name="address"/>
+                    </group>
+                </group>
+
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_institution_staff" model="ir.ui.view">
+        <field name="name">view.institution.staff</field>
+        <field name="model">institution.staff</field>
+        <field name="arch" type="xml">
+            <list string="Staff List">
+
+                <field name="employee_id" optional="show"/>
+
+            <field name="first_name"/>
+            <field name="last_name"/>
+            <field name="gender" optional="hide"/>
+
+            <field name="job_title"/>
+            <field name="department_id"/>
+            <field name="work_email"/>
+            <field name="work_contact" optional="hide"/>
+            <field name="date_joined"/>
+            <field name="salary" optional="hide"/>
+
+            </list>
+        </field>
+
+    </record>
+
+   <record id="action_institution_staff" model="ir.actions.act_window">
+        <field name="name">Staff</field>
+        <field name="res_model">institution.staff</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="menu_institution_staff"
+        name="Staff"
+        parent="menu_institution_root"
+        action="action_institution_staff"
+        sequence="2"
+    />
+
+
+
+
+</odoo>
