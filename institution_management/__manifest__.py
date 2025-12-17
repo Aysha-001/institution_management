@@ -15,6 +15,8 @@
     'views/category_views.xml',
     'views/teacher_views.xml',
     'views/batch_views.xml',
+    'views/fees_views.xml',
+    'views/attendance_views.xml',
     'views/menu_view.xml'
 ],
 'installable': True,

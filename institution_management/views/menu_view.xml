@@ -45,7 +45,7 @@
 
     <menuitem
         id="menu_course_root"
-        name="Courses"
+        name="Course"
         parent="menu_institution_root"
         sequence="4"/>
 
@@ -71,5 +71,27 @@
         parent="menu_course_root"
         action="action_batch"
         sequence="3"/>
+
+     <menuitem
+        id="menu_attendance"
+        name="Attendance"
+        parent="menu_course_root"
+        action="attendance_action"
+        sequence="4"/>
+
+    <menuitem
+        id="menu_payments"
+        name="Payments"
+        parent="menu_institution_root"
+        sequence="5"/>
+
+    <menuitem
+        id="fees_menu"
+        name="Student Fees"
+        parent="menu_payments"
+        action="fees_action"
+        sequence="1"
+    />
+
 
 </odoo>

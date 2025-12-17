@@ -17,3 +17,4 @@ class Batch(models.Model):
         'batch_id',
         string='Student',
     )
+

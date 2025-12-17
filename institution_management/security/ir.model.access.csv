@@ -6,3 +6,6 @@ access_institution_course,inst course access,model_institution_course,base.group
 access_institution_category,inst category access,model_institution_category,base.group_user,1,1,1,1
 access_institution_teacher,inst teacher access,model_institution_teacher,base.group_user,1,1,1,1
 access_institution_batch,inst batch access,model_institution_batch,base.group_user,1,1,1,1
+access_institution_fees,inst fees access,model_institution_fees,base.group_user,1,1,1,1
+access_institution_attendance,inst attendance access,model_institution_attendance,base.group_user,1,1,1,1
+access_institution_session_attendance,inst fees session_attendance,model_institution_session_attendance,base.group_user,1,1,1,1
