@@ -18,12 +18,3 @@ class Staff(models.Model):
     department_id = fields.Many2one('institution.department', string='Department', required=True)
     date_joined = fields.Datetime(string='Date Joined', required=True)
     address = fields.Text(string='Address', required=True)
-'''
-
-institute.department,"Organization structure (Academics, Finance, HR, etc.)", "name, manager_id"
-institute.employee,"For all staff (teachers, admin, etc.)","name, department_id (Many-to-One to institute.department)"
-institute.subject,"Represents a subject taught (Math, History, etc.)","name, code"
-institute.teacher (inherits institute.employee),Specific fields for teachers,subject_ids (Many-to-Many to institute.subject)
-
-
-'''

@@ -7,10 +7,13 @@
 'category': 'Education',
 'depends': ['base'],
 'data': [
+    'security/ir.model.access.csv',
     'views/student_views.xml',
     'views/staff_views.xml',
     'views/department_views.xml',
-    'security/ir.model.access.csv',
+    'views/course_views.xml',
+    'views/category_views.xml',
+    'views/menu_view.xml'
 ],
 'installable': True,
 'application': True,

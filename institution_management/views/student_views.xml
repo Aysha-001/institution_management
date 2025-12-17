@@ -51,15 +51,5 @@
         <field name="view_mode">list,form</field>
         </record>
 
-    <menuitem
-        id="menu_institution_root"
-        name="Institution Management"
-        sequence="10"/>
 
-    <menuitem
-        id="menu_student_list"
-        name="Students"
-        parent="menu_institution_root"
-        action="action_student_form"
-        sequence="1"/>
 </odoo>

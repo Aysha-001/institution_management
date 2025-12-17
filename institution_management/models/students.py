@@ -15,4 +15,16 @@ class Student(models.Model):
     address = fields.Text(string='Address', required=True)
     active = fields.Boolean(default=True)
 
+    course_id = fields.Many2one(
+        'institution.course',
+        string='Course enrolled',
+    )
+
+    batch_id = fields.Many2one(
+        'institution.batch',
+        string='Batch',
+    )
+
+
+
 

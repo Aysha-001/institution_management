@@ -29,12 +29,7 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem
-        id="menu_department_list"
-        name="Departments"
-        parent="menu_institution_root"
-        action="department_form_action"
-        sequence="3"/>
+
 
 
 </odoo>
