@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="teacher_form" model="ir.ui.view">
+        <field name="name">teacher.form</field>
+        <field name="model">institution.teacher</field>
+        <field name="arch" type="xml">
+            <form string="Teacher Form">
+            <sheet>
+                <group>
+                    <group string="Personal Information">
+                        <field name="first_name"/>
+                        <field name="last_name"/>
+                        <field name="gender"/>
+                        <field name="age"/>
+                        <field name="dob"/>
+                        <field name="work_email"/>
+                        <field name="work_contact"/>
+                        <field name="marital_status"/>
+                        <field name="address"/>
+
+                    </group>
+                    <group string="Work Information">
+
+                        <field name="job_title"/>
+                        <field name="date_joined"/>
+                        <field name="salary"/>
+                        <field name="department_id"/>
+                        <field name="area_of_expertise"/>
+                        <field name="course_assigned" widget="many2many_tags"/>
+
+                    </group>
+                </group>
+
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="teacher_list_view" model="ir.ui.view">
+        <field name="name">teacher.list.view</field>
+        <field name="model">institution.teacher</field>
+        <field name="arch" type="xml">
+            <list string="Teacher List">
+
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="area_of_expertise"/>
+
+            </list>
+        </field>
+    </record>
+
+    <record id="teacher_action" model="ir.actions.act_window">
+        <field name="name">Teacher</field>
+        <field name="res_model">institution.teacher</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="teacher_search" model="ir.ui.view">
+
+        <field name="name">teacher.search</field>
+        <field name="model">institution.teacher</field>
+        <field name="arch" type="xml">
+            <search string="Search teachers">
+                <field name="first_name"/>
+                <field name="area_of_expertise"/>
+                <field name="course_assigned"/>
+
+                <filter name="group_by_expertise" string="Area of expertise"
+                        context="{'group_by':'area_of_expertise'}" />
+
+            </search>
+        </field>
+    </record>
+
+</odoo>

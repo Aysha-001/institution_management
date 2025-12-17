@@ -13,6 +13,8 @@
     'views/department_views.xml',
     'views/course_views.xml',
     'views/category_views.xml',
+    'views/teacher_views.xml',
+    'views/batch_views.xml',
     'views/menu_view.xml'
 ],
 'installable': True,

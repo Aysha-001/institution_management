@@ -4,3 +4,5 @@ access_institution_staff,inst staff access,model_institution_staff,base.group_us
 access_institution_department,inst department access,model_institution_department,base.group_user,1,1,1,1
 access_institution_course,inst course access,model_institution_course,base.group_user,1,1,1,1
 access_institution_category,inst category access,model_institution_category,base.group_user,1,1,1,1
+access_institution_teacher,inst teacher access,model_institution_teacher,base.group_user,1,1,1,1
+access_institution_batch,inst batch access,model_institution_batch,base.group_user,1,1,1,1
