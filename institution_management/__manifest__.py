@@ -8,10 +8,10 @@
 'depends': ['base'],
 'data': [
     'security/ir.model.access.csv',
+    'views/course_views.xml',
     'views/student_views.xml',
     'views/staff_views.xml',
     'views/department_views.xml',
-    'views/course_views.xml',
     'views/category_views.xml',
     'views/teacher_views.xml',
     'views/batch_views.xml',

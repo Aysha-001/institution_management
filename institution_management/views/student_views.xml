@@ -10,25 +10,46 @@
                     <group>
 
                         <group>
+                            <field name="admission_no"/>
                             <field name="first_name"/>
                             <field name="last_name"/>
-                            <field name="admission_no"/>
                         </group>
                         <group>
                             <field name="dob"/>
                             <field name="gender"/>
                             <field name="guardian"/>
+                            <field name="address"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="course_id"/>
+                            <field name="batch_id"/>
                         </group>
                     </group>
-
-                    <field name="address"/>
-
-                    <field name="active" invisible="1"/>
                 </sheet>
+                <field name="fee_status"/>
+                <sheet>
+                        <group string="Pending Fees">
+                            <field name="fee_ids" domain="[('payment_status', '=', 'pending')]">
+                                <list editable="bottom">
+                                     <field name="create_date" string="Created On" readonly="1"/>
+                                     <field name="amount" />
+
+                                </list>
+                            </field>
+                        </group>
+                   </sheet>
+
+
             </form>
         </field>
+    </record>
 
-
+    <record id="student_admission_sequence" model="ir.sequence">
+        <field name="name">student.admission.sequence</field>
+        <field name="code">institution.student</field>
+        <field name="prefix">ADM-DVAV-%s-</field>
+        <field name="padding">5</field>
     </record>
 
     <record id="view_institution_student_tree" model="ir.ui.view">
@@ -39,17 +60,38 @@
                 <field name="admission_no"/>
                 <field name="first_name"/>
                 <field name="last_name"/>
-                <field name="dob"/>
+                <field name="course_id"/>
+                <field name="batch_id"/>
                 <field name="gender" optional="show"/>
                 </list>
         </field>
     </record>
 
+
+  <record id="student_search" model="ir.ui.view">
+        <field name="name">student.search</field>
+        <field name="model">institution.student</field>
+        <field name="arch" type="xml">
+        <search string="Student Search">
+
+            <field name="course_id"/>
+
+            <filter name="group_course" string="Course" context="{'group_by':'course_id'}"/>
+
+        </search>
+    </field>
+    </record>
+
+
+
     <record id="action_student_form" model="ir.actions.act_window">
         <field name="name">Students</field>
         <field name="res_model">institution.student</field>
         <field name="view_mode">list,form</field>
-        </record>
+        <field name="search_view_id" ref="student_search"/>
+
+    </record>
+
 
 
 </odoo>

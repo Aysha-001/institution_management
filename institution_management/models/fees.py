@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields ,api
 
 class Fees(models.Model):
     _name = 'institution.fees'
@@ -17,4 +17,5 @@ class Fees(models.Model):
     )
 
     payment_status = fields.Selection([('paid', 'Paid'),('pending', 'Pending')], default='pending')
+
 
