@@ -56,9 +56,12 @@ class Student(models.Model):
     @api.depends('fee_ids.payment_status')
     def _compute_fee_status(self):
         for student in self:
-            student.fee_status = 'unpaid'
-            if all(fee.payment_status == 'paid' for fee in student.fee_ids):
-                student.fee_status = 'paid'
+            if student.fee_ids:
+                student.fee_status = 'unpaid'
+                if all(fee.payment_status == 'paid' for fee in student.fee_ids):
+                    student.fee_status = 'paid'
+            else:
+                student.fee_status = 'unpaid'
 
     @api.model
     def create(self, vals):

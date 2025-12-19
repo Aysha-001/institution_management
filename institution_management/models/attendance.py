@@ -24,21 +24,8 @@ class Attendance(models.Model):
         #clear existing lines
         self.attendance_ids = [(5,0,0)]
 
-        #self.env - gateway to db
-        students = self.env['institution.student'].search([
-            ('batch_id', '=' , self.batch_id.id)
-        ])
+        #using command tuples
+        lines = [(0,0,{'student_id': s.id, 'present': True}) for s in self.batch_id.student_id]
 
-        lines = []
-
-        for student in students:
-            line_value = (0,0,{
-                'student_id': student.id,
-                'present' : True,
-            })
-            lines.append(line_value)
-            #get students of batch
-            #get institution.batch.student_id
-            #insert them as editable lines
         self.attendance_ids = lines
 

@@ -93,5 +93,28 @@
         sequence="1"
     />
 
+    <menuitem
+       id="report_menu"
+       name="Report"
+       parent="menu_institution_root"
+       sequence="6"
+    />
+
+    <menuitem
+      id="student_analysis_menu"
+      name="Student analysis"
+      parent="report_menu"
+      action="action_student_search"
+      sequence="1"
+    />
+
+    <menuitem
+      id="attendance_summary"
+      name="Attendance summary"
+      parent="report_menu"
+      action="session_attendance_action"
+      sequence="2"
+    />
+
 
 </odoo>
