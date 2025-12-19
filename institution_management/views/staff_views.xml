@@ -12,7 +12,6 @@
                         <field name="first_name"/>
                         <field name="last_name"/>
                         <field name="gender"/>
-                        <field name="age"/>
                         <field name="dob"/>
                         <field name="work_email"/>
                         <field name="work_contact"/>

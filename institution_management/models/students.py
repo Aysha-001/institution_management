@@ -46,6 +46,13 @@ class Student(models.Model):
          'No Two admission no can be same!!')
     ]
 
+    pending_fee_ids = fields.One2many(
+        'institution.fees',
+        'student_id',
+        string="Pending Fees",
+        domain=[('payment_status', '=', 'pending')]
+    )
+
     @api.depends('dob')
     def _compute_age(self):
         today = date.today()
@@ -65,8 +72,9 @@ class Student(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get('admission_no') == 'New':
-            vals['admission_no'] = self.env['ir.sequence'].next_by_code('institution.student')
+        for val in vals:
+            if val.get('admission_no', 'New') == 'New':
+                val['admission_no'] = self.env['ir.sequence'].next_by_code('institution.student')
 
         return super().create(vals)
 

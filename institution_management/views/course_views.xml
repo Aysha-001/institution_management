@@ -28,6 +28,7 @@
                         <field name="name"/>
                         <field name="code"/>
                         <field name="duration"/>
+                        <field name="descr"/>
                     </group>
 
                     <group>

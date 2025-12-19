@@ -7,7 +7,7 @@ class Course(models.Model):
     name = fields.Char(string='Name', required=True)
     code = fields.Char(string='Code', required=True)
     descr = fields.Char(string='Description', required=True)
-    duration = fields.Integer(string='Duration', required=True)
+    duration = fields.Float(string='Duration', required=True)
 
     assigned_teacher = fields.Many2many(
         'institution.teacher',

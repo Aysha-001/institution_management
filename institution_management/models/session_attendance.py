@@ -32,6 +32,24 @@ class SessionAttendance(models.Model):
         string='Attendance Date'
     )
 
+    student_name = fields.Char(
+        string="Student name",
+        related="student_id.first_name",
+        store=True
+    )
+
+    attendance_rate = fields.Float(
+        string="Attendance %",
+        compute="_compute_attendance_rate",
+        group_operator="avg",
+        store=True
+    )
+
+    @api.depends('present_int')
+    def _compute_attendance_rate(self):
+        for record in self:
+            record.attendance_rate = 100.0 if record.present_int == 1 else 0.0
+
     @api.depends('present')
     def _compute_present(self):
         for record in self:

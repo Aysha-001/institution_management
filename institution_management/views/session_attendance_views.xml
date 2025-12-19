@@ -7,9 +7,10 @@
         <field name="model">institution.session.attendance</field>
         <field name="arch" type="xml">
             <pivot string="Attendance summary">
-                <field name="student_id" type="row"/>
+                <field name="student_name" type="row"/>
                 <field name="attendance_date" type="col" />
                 <field name="present_int" type="measure"/>
+                <field name="attendance_rate" type="measure" widget="float"/>
             </pivot>
         </field>
     </record>

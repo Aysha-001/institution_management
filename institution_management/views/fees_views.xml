@@ -7,10 +7,13 @@
         <field name="arch" type="xml">
             <form string="Fees">
                 <sheet>
-                    <field name="amount" />
-                    <field name="due_date" />
-                    <field name="payment_date" />
-                    <field name="student_id" />
+                    <group>
+                        <field name="amount" />
+                        <field name="due_date" />
+                        <field name="payment_date" />
+                        <field name="student_id" />
+                        <field name="payment_status"/>
+                    </group>
                 </sheet>
             </form>
         </field>
