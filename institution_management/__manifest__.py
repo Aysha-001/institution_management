@@ -7,7 +7,9 @@
 'category': 'Education',
 'depends': ['base'],
 'data': [
-    'security/ir.model.access.csv',
+    'security/groups.xml',
+    'security/student_rules.xml',
+'security/ir.model.access.csv',
     'views/course_views.xml',
     'views/student_views.xml',
     'views/staff_views.xml',

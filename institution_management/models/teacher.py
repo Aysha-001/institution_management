@@ -11,6 +11,8 @@ class Teacher(models.Model):
     
     here the relation is 1:1 composition not the generic many to one
     '''
+    user_id = fields.Many2one('res.users', string='Related User')
+
     staff_id = fields.Many2one(
         'institution.staff',
         required=True,
@@ -22,4 +24,6 @@ class Teacher(models.Model):
         'institution.course',
         string='Course Assigned'
     )
+
+
 

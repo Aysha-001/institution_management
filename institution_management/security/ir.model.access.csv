@@ -9,3 +9,7 @@ access_institution_batch,inst batch access,model_institution_batch,base.group_us
 access_institution_fees,inst fees access,model_institution_fees,base.group_user,1,1,1,1
 access_institution_attendance,inst attendance access,model_institution_attendance,base.group_user,1,1,1,1
 access_institution_session_attendance,inst fees session_attendance,model_institution_session_attendance,base.group_user,1,1,1,1
+
+
+access_student_read,access student read,model_institution_student,institution_management.group_teacher,1,0,0,0
+access_student_self,access student self,model_institution_student,institution_management.group_student,1,0,0,0

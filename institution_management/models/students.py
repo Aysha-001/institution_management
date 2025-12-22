@@ -5,6 +5,7 @@ class Student(models.Model):
     _name = 'institution.student'
     _description = 'Student'
 
+    user_id = fields.Many2one('res.users', string='Related User')
 
     first_name = fields.Char(string='First Name', required=True)
     last_name = fields.Char(string='Last Name', required=True)

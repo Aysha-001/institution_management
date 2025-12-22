@@ -20,7 +20,7 @@
 
                     </group>
                     <group string="Work Information">
-
+                        <field name="user_id" />
                         <field name="job_title"/>
                         <field name="date_joined"/>
                         <field name="salary"/>
